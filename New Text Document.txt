@@ -1,0 +1,676 @@
+#include<stdio.h>
+#include<conio.h>
+void input();
+void victory();
+void pp();
+char a[3][3];
+void main()
+{
+int i,j;
+clrscr();
+for(i=0;i<=2;i++)
+	{
+		for(j=0;j<=2;j++)
+			{
+				a[i][j]=0;
+			}
+	}
+input();
+if(a[1][1]=='X')
+	{
+		printf("\n 	computer chose 11  \n");
+		a[0][0]='O';
+		input();
+//new line
+		if(a[0][1]=='X')
+		{
+			printf("\n  computer chose 32  \n");
+			a[2][1]='O';
+			input();
+			if(a[0][2]=='X')
+				{
+					printf("\n  computer chose 31  \n");
+					a[2][0]='O';
+					input();
+					if(a[2][2]!='X')
+						{
+							printf("\n  computer chose 33  \n");
+							a[2][2]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 21  \n");
+							a[1][0]='O';
+							goto win;
+						}
+				}
+			else if(a[1][2]=='X')
+				{
+					printf("\n  computer chose 21  \n");
+					a[1][0]='O';
+					input();
+					if(a[2][0]!='X')
+						{
+							printf("\n  computer chose 31  \n");
+							a[2][0]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 13  \n");
+							a[0][2]='O';
+							goto win;
+						}
+				}
+			else if(a[1][0]=='X')
+				{
+					printf("\n  computer chose 23  \n");
+					a[1][2]='O';
+					input();
+					if(a[0][2]=='X')
+						{
+							printf("\n  computer chose 31  \n");
+							a[2][0]='O';
+							goto win;
+						}
+					else if(a[2][0]=='X')
+						{
+							printf("\n  computer chose 13  \n");
+							a[0][2]='O';
+						}
+					else
+						{
+							printf("\n  computer chose 13  \n");
+							a[0][2]='O';
+							goto win;
+						}
+				}
+			else if(a[2][0]=='X')
+				{
+					printf("\n  computer chose 13  \n");
+					a[0][2]='O';
+					input();
+					if(a[1][0]=='X')
+						{
+							printf("\n  computer chose 23  \n");
+							a[1][2]='O';
+							goto win;
+						}
+					else if(a[1][2]=='X')
+						{
+							printf("\n  computer chose 21  \n");
+							a[1][0]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 21  \n");
+							a[1][0]='O';
+							goto win;
+						}
+				}
+			else
+				{
+					printf("\n  computer chose 31  \n");
+					a[2][0]='O';
+					input();
+					if(a[1][0]!='X')
+						{
+							printf("\n  computer chose 21  \n");
+							a[1][0]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 23  \n");
+							a[1][2]='O';
+							goto win;
+						}
+				}
+		}
+//new line
+		else if(a[1][0]=='X')
+			{
+				printf("\n  computer chose 23  \n");
+				a[1][2]='O';
+				input();
+				if(a[2][0]=='X')
+					{
+						printf("\n  computer chose 13  \n");
+						a[0][2]='O';
+						input();
+							if(a[2][2]!='X')
+							{
+								printf("\n  computer chose 33  \n");
+								a[2][2]='O';
+								goto win;
+							}
+							else
+							{
+							printf("\n  computer chose 12  \n");
+							a[0][1]='O';
+							goto win;
+							}
+					  }
+				else if(a[2][1]=='X')
+					  {
+						printf("\n  computer chose 12  \n");
+						a[0][1]='O';
+						input();
+						if(a[0][2]!='X')
+							{
+							printf("\n  computer chose 13  \n");
+							a[0][2]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 31  \n");
+							a[2][0]='O';
+							goto win;
+						}
+				}
+			else if(a[0][1]=='X')
+				{
+					printf("\n  computer chose 32  \n");
+					a[2][1]='O';
+					input();
+					if(a[0][2]=='X')
+						{
+							printf("\n  computer chose 31  \n");
+							a[2][0]='O';
+							goto win;
+						}
+					else if(a[2][0]=='X')
+						{
+							printf("\n  computer chose 13  \n");
+							a[0][2]='O';
+						}
+					else
+						{
+							printf("\n  computer chose 13  \n");
+							a[0][2]='O';
+							goto win;
+						}
+				}
+			else if(a[2][2]=='X')
+				{
+					printf("\n  computer chose 13  \n");
+					a[0][2]='O';
+					input();
+					if(a[0][1]!='X')
+						{
+							printf("\n  computer chose 12  \n");
+							a[0][1]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 32  \n");
+							a[2][1]='O';
+							goto win;
+						}
+				}
+			else
+				{
+					printf("\n  computer chose 31  \n");
+					a[2][0]='O';
+					input();
+					if(a[0][1]=='X')
+						{
+							printf("\n  computer chose 32  \n");
+							a[2][1]='O';
+							goto win;
+						}
+					else if(a[2][1]=='X')
+						{
+							printf("\n  computer chose 12  \n");
+							a[0][1]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 12  \n");
+							a[0][1]='O';
+							goto win;
+						}
+					}
+		}
+//new line
+		else if(a[0][2]=='X')
+		{
+			printf("\n  computer chose 31  \n");
+			a[2][0]='O';
+			input();
+			if(a[1][0]!='X')
+				{
+					printf("\n  computer chose 21  \n");
+					a[1][0]='O';
+					goto win;
+				}
+			else
+				{
+					printf("\n  computer chose 23  \n");
+					a[1][2]='O';
+					input();
+					if(a[0][1]=='X')
+						{
+							printf("\n  computer chose 32  \n");
+							a[2][1]='O';
+							goto win;
+						}
+					else if(a[2][1]=='X')
+						{
+							printf("\n  computer chose 12  \n");
+							a[0][1]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 12  \n");
+							a[0][1]='O';
+							goto win;
+						}
+				}
+		}
+//new line
+		else if(a[1][2]=='X')
+		{
+			printf("\n  computer chose 21  \n");
+			a[1][0]='O';
+			input();
+			if(a[2][0]!='X')
+				{
+					printf("\n  computer chose 31  \n");
+					a[2][0]='O';
+					goto win;
+				}
+			else
+				{
+					printf("\n  computer chose 13  \n");
+					a[0][2]='O';
+					input();
+					if(a[0][1]!='X')
+						{
+							printf("\n  computer chose 12  \n");
+							a[0][1]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 32  \n");
+							a[2][1]='O';
+							goto win;
+						}
+				}
+
+		}
+//new line
+		else if(a[2][1]=='X')
+		{
+			printf("\n  computer chose 12  \n");
+			a[0][1]='O';
+			input();
+			if(a[0][2]!='X')
+				{
+					printf("\n  computer chose 13  \n");
+					a[0][2]='O';
+					goto win;
+				}
+			else
+				{
+					printf("\n  computer chose 31  \n");
+					a[2][0]='O';
+					input();
+					if(a[1][0]!='X')
+						{
+							printf("\n  computer chose 21  \n");
+							a[1][0]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 23  \n");
+							a[1][2]='O';
+							goto win;
+						}
+				  }
+		}
+//new line
+		else if(a[2][0]=='X')
+		{
+			printf("\n  computer chose 13  \n");
+			a[0][2]='O';
+			input();
+			if(a[0][1]!='X')
+				{
+					printf("\n  computer chose 12  \n");
+					a[0][1]='O';
+					goto win;
+				}
+			else
+				{
+					printf("\n  computer chose 32  \n");
+					a[2][1]='O';
+					input();
+					if(a[1][0]=='X')
+						{
+							printf("\n  computer chose 23  \n");
+							a[1][2]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 21  \n");
+							a[1][0]='O';
+							goto win;
+						}
+				}
+		}
+//new line
+		else
+		{
+			printf("\n  computer chose 31  \n");
+			a[2][0]='O';
+			input();
+			if(a[1][0]!='X')
+			{
+				printf("\n  computer chose 21 \n");
+				a[1][0]='O';
+				goto win;
+			}
+				else
+			{
+					printf("\n  computer chose 23  \n");
+					a[1][2]='O';
+					input();
+					if(a[2][1]=='X')
+						{
+							printf("\n  computer chose 12  \n");
+							a[0][1]='O';
+							goto win;
+						}
+					else
+						{
+							printf("\n  computer chose 32  \n");
+							a[2][1]='O';
+							goto win;
+						}
+			}
+		}
+	}
+else
+	{
+		printf("\n  computer chose 22   \n");
+		a[1][1]='O';
+		input();
+		if(((a[0][0]=='X')&&(a[0][1]=='X'))||((a[2][2]=='X')&&(a[1][2]=='X')))
+			{
+				printf("\n  computer chose 13  \n");
+				a[0][2]='O';
+				input();
+				if(a[2][0]!='X')
+					{
+						printf("\n  computer chose 31  \n");
+						a[2][0]='O';
+						goto win;
+					}
+				else
+					{
+						if(a[0][0]=='X')
+							{
+								printf("\n  computer chose 21  \n");
+								a[1][0]='O';
+								input();
+								if(a[1][2]!='X')
+									{
+										printf("\n  computer chose 23  \n");
+										a[1][2]='O';
+										goto win;
+									}
+								else
+									{
+										printf("\n  computer chose 33  \n");
+										a[2][2]='O';
+										goto win;
+									}
+							}
+						else
+							{
+								printf("\n  computer chose 32  \n");
+								a[2][1]='O';
+								input();
+
+										if(a[0][1]!='X')
+											{
+												printf("\n  computer chose 12  \n");
+												a[0][1]='O';
+												goto win;
+											}
+										else
+											{
+												printf("\n  computer chose 11  \n");
+												a[0][0]='O';
+												goto win;
+											}
+
+									}
+
+							}
+
+			}
+			if(((a[0][1]=='X')&&(a[0][2]=='X'))||((a[1][0]=='X')&&(a[2][0]=='X')))
+			{
+				printf("\n  computer chose 11  \n");
+				a[0][0]='O';
+				input();
+				if(a[2][2]!='X')
+					{
+						printf("\n  computer chose 33  \n");
+						a[2][2]='O';
+						goto win;
+					}
+				else
+					{
+						if(a[0][2]=='X')
+							{
+								printf("\n  computer chose 23  \n");
+								a[1][2]='O';
+								input();
+								if(a[1][0]!='X')
+									{
+										printf("\n  computer chose 21  \n");
+										a[1][0]='O';
+										goto win;
+									}
+								else
+									{
+										printf("\n  computer chose 31  \n");
+										a[2][0]='O';
+										goto win;
+									}
+							}
+						else
+							{
+								printf("\n  computer chose 32  \n");
+								a[2][1]='O';
+								input();
+								if(a[0][1]!='X')
+									{
+										printf("\n  computer chose 12  \n");
+										a[0][1]='O';
+										goto win;
+									}
+								else
+									{
+										printf("\n  computer chose 13  \n");
+										a[0][2]='O';
+										goto win;
+									}
+							}
+					}
+			}
+			if(((a[1][0]=='X')&&(a[0][0]=='X'))||((a[2][2]=='X')&&(a[2][1]=='X')))
+			{
+				printf("\n  computer chose 31  \n");
+				a[2][0]='O';
+				input();
+				if(a[0][2]!='X')
+					{
+						printf("\n  computer chose 13  \n");
+						a[0][2]='O';
+						goto win;
+					}
+				else
+					{
+						if(a[0][0]=='X')
+							{
+								printf("\n  computer chose 12  \n");
+								a[0][1]='O';
+								input();
+								if(a[2][1]!='X')
+									{
+										printf("\n  computer chose 32  \n");
+										a[2][1]='O';
+										goto win;
+									}
+								else
+									{
+										printf("\n  computer chose 33  \n");
+										a[2][2]='O';
+										goto win;
+									}
+							}
+						else
+							{
+								printf("\n  computer chose 23  \n");
+								a[1][2]='O';
+								input();
+								if(a[1][0]!='X')
+									{
+										printf("\n  computer chose 21  \n");
+										a[1][0]='O';
+										goto win;
+									}
+								else
+									{
+										printf("\n  computer chose 11  \n");
+										a[0][0]='O';
+										goto win;
+									}
+							}
+					}
+			}
+			if(((a[2][0]=='X')&&(a[2][1]=='X'))||((a[0][2]=='X')&&(a[1][2]=='X')))
+			{
+				printf("\n  computer chose 33  \n");
+				a[2][2]='O';
+				input();
+				if(a[0][0]!='X')
+					{
+						printf("\n  computer chose 11  \n");
+						a[0][0]='O';
+						goto win;
+					}
+				else
+					{
+						if(a[0][2]=='X')
+							{
+								printf("\n  computer chose 12  \n");
+								a[0][1]='O';
+								input();
+								if(a[2][1]!='X')
+									{
+										printf("\n  computer chose 32  \n");
+										a[2][1]='O';
+										goto win;
+									}
+								else
+									{
+										printf("\n  computer chose 31  \n");
+										a[2][0]='O';
+										goto win;
+									}
+							}
+						else
+							{
+								printf("\n  computer chose 21  \n");
+								a[1][0]='O';
+								input();
+								if(a[1][2]!='X')
+									{
+										printf("\n  computer chose 23  \n");
+										a[1][2]='O';
+										goto win;
+									}
+								else
+									{
+										printf("\n  computer chose 13  \n");
+										a[0][2]='O';
+										goto win;
+									}
+							}
+					}
+			}
+   }
+win:
+{
+pp();
+victory();
+}
+getch();
+}
+void input()
+{
+	int p;
+	pp();
+	printf("\n enetr the squre number = ");
+	scanf("%d",&p);
+	switch(p)
+		{
+			case 11:
+			a[0][0]='X';
+			break;
+			case 12:
+			a[0][1]='X';
+			break;
+			case 13:
+			a[0][2]='X';
+			break;
+			case 21:
+			a[1][0]='X';
+			break;
+			case 22:
+			a[1][1]='X';
+			break;
+			case 23:
+			a[1][2]='X';
+			break;
+			case 31:
+			a[2][0]='X';
+			break;
+			case 32:
+			a[2][1]='X';
+			break;
+			case 33:
+			a[2][2]='X';
+			break;
+		}
+	pp();
+}
+void victory()
+{
+pp();
+printf("computer wins");
+}
+void pp()
+{
+printf("\n\n");
+printf("      %c  |   %c  |   %c\n",a[0][0],a[0][1],a[0][2]);
+printf("    -----|------|------\n");
+printf("      %c  |   %c  |   %c\n",a[1][0],a[1][1],a[1][2]);
+printf("    -----|------|------\n");
+printf("      %c  |   %c  |   %c\n\n",a[2][0],a[2][1],a[2][2]);
+}
+
