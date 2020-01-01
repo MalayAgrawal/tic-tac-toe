@@ -616,14 +616,14 @@ else
 		{
 			a[0][1]='O';
 			input();
-			if(a[0][1]!='X')
+			if(a[2][1]!='X')
 			{
-				a[0][1]='O';
+				a[2][1]='O';
 				goto win;
 			}
 			else 
 			{
-				a[0][0]='O';
+				a[2][0]='O';
 				input();
 				if(a[0][2]!='X')
 				{
@@ -1026,7 +1026,6 @@ printf("computer wins");
 }
 void pp()
 {
-	clrscr();
 printf("\n\n");
 printf("      %c |  %c  |   %c             11  |  12  | 13 \n",a[0][0],a[0][1],a[0][2]);
 printf("    ----|-----|-----           -----|------|---- \n");
